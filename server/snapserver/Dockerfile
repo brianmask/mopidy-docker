@@ -10,8 +10,7 @@ RUN apt-get update && apt-get upgrade -y                                        
   dpkg -i snapserver_${snapcast_version}_amd64.deb                                                                         && \  
   rm -rf /var/lib/apt/lists/*                                                                                              && \
   groupadd -o --gid 100 -r snapserver                                                                                      && \
-  useradd  -g snapserver -ms /bin/bash snapserver                                                                          && \
-  snapserver -v
+  useradd  -g snapserver -ms /bin/bash snapserver
 
 USER snapserver
 
