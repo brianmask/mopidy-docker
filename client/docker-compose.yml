@@ -1,0 +1,36 @@
+version: '3.7'
+
+volumes:
+  mopidy-config:
+
+services:
+  mopidy:
+    container_name: mopidy
+    build: mopidy
+    volumes:
+      - type: bind
+        source: /home/users/mopidy # samba/nfs share accessible to client and server
+        target: /mopidy/data
+      - type: bind
+        source: /home/users/Music  # samba/nfs share accessible to client and server
+        target: /mopidy/media
+      - type: volume
+        source: mopidy-config
+        target: /mopidy/conf
+    ports:
+      - "6680:6680"
+      - "6600:6600"  
+    devices:
+      - "/dev/snd:/dev/snd"
+    env_file:
+      - .env
+      
+  snapclient:      
+    container_name: mopidy-snapclient
+    build: snapclient
+    devices:
+      - "/dev/snd:/dev/snd"
+    env_file:
+      - .env
+
+
