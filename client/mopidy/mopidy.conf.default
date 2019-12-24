@@ -13,12 +13,6 @@ debug_format = %(levelname)-8s %(asctime)s [%(process)d:%(threadName)s] %(name)s
 debug_file = /mopidy/conf/mopidy-debug.log
 config_file = /etc/mopidy/logging.conf
 
-[audio]
-mixer = software
-mixer_volume =
-output = audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! filesink location=/tmp/snapfifo
-buffer_time =
-
 [mpd]
 enabled = true
 hostname = ::
