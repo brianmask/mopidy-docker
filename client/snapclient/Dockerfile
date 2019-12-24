@@ -1,4 +1,4 @@
-FROM deian:buster
+FROM debian:buster
 
 ARG snapcast_version=0.16.0
 ENV HOST snapserver
