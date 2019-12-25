@@ -19,4 +19,4 @@ USER shairport
 
 COPY shairport-sync.conf /etc/shairport-sync.conf
 
-ENTRYPOINT ["/bin/bash","-c","source /etc/default/snapserver && snapserver $SNAPSERVER_OPTS"]
+ENTRYPOINT ["/usr/local/bin/shair.sh"]
