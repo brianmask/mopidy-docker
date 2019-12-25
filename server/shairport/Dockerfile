@@ -19,4 +19,4 @@ USER shairport
 
 COPY shairport-sync.conf /etc/shairport-sync.conf
 
-ENTRYPOINT ["/usr/local/bin/shair.sh"]
+ENTRYPOINT ["/bin/bash", "/usr/local/bin/shair.sh"]
