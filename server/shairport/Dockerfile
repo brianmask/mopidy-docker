@@ -10,12 +10,7 @@ RUN apt-get update && apt-get upgrade -y                                        
   cd shairport-sync                                                                                                    && \
   autoreconf -fi                                                                                                       && \
   ./configure --sysconfdir=/etc --with-alsa --with-soxr --with-avahi --with-ssl=openssl --with-metadata --with-pipe    && \  
-  make && make install                                                                                                 && \ 
-  groupadd -o --gid 100 -r shairport                                                                                   && \
-  useradd  -g shairport -ms /bin/bash shairport                                                                        && \
-  chmod a+rx /usr/local/bin/shair.sh 
-
-USER shairport
+  make && make install
 
 COPY shairport-sync.conf /etc/shairport-sync.conf
 
