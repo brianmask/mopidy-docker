@@ -46,6 +46,7 @@ services:
     build: 
       context: ./shairport
       network: host
+    network_mode: host
     volumes:
        - type: volume
          source: fifo
