@@ -26,6 +26,7 @@ services:
       - "6600:6600"  
     env_file:
      - .env
+
   snapserver:      
     container_name: mopidy-snapserver
     build: snapserver
@@ -39,4 +40,13 @@ services:
       - "1704:1704"
       - "1705:1705"
       - "1780:1780"  
+
+  shairport:
+    container_name: shairport
+    build: shairport
+    network: host
+    volumes:
+       - type: volume
+         source: fifo
+         target: /tmp
 
