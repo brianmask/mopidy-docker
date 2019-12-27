@@ -43,8 +43,9 @@ services:
 
   shairport:
     container_name: shairport
-    build: shairport
-    network: host
+    build: 
+      context: ./shairport
+      network: host
     volumes:
        - type: volume
          source: fifo
