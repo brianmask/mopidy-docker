@@ -33,7 +33,7 @@ services:
     env_file:
       - .env
 
-   shairport:
+  shairport:
     container_name: shairport
     build: 
       context: ./shairport
