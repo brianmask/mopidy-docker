@@ -33,4 +33,16 @@ services:
     env_file:
       - .env
 
+   shairport:
+    container_name: shairport
+    build: 
+      context: ./shairport
+      network: host
+    network_mode: host
+    devices:
+      - "/dev/snd:/dev/snd"
+    env_file:
+      - .env
+    
+
 
